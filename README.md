@@ -7,4 +7,4 @@ This is an Node.js backend server starter. The following features are implemente
 - OOP based aproach
 - Error handling
 - Testing routes and middlewares
-- Local database and access by changing environment variables(requires setting up a local postgresql and redis server with https://github.com/DarthBenro008/upstash-redis-local)
+- Local database and redis access by changing environment variables(requires setting up a local postgresql and redis server with https://github.com/DarthBenro008/upstash-redis-local)
