@@ -1,10 +1,10 @@
 export type AccessTokenPayload = {
-  id: string;
+  id: number;
   name: string;
   email: string;
   image: string | null;
 };
 
 export type RefreshTokenPayload = {
-  id: string;
+  id: number;
 };

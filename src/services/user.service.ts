@@ -10,7 +10,7 @@ export default class UserService {
     return res[0] ?? null;
   }
 
-  public async findUserById(userId: string) {
+  public async findUserById(userId: number) {
     const res = await this.db.select().from(userTable).where(eq(userTable.id, userId));
     return res[0] ?? null;
   }

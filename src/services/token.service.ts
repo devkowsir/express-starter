@@ -1,14 +1,14 @@
 import { REFRESH_TOKEN_AGE } from "@/config";
-import redis from "@/databases/redis";
+import _redis from "@/databases/redis";
 
 export default class TokenService {
-  private redis = redis;
+  private redis = _redis;
 
   public async revokeRefreshToken(token: string) {
     return await this.redis.setex(`revoked-token#${token}`, REFRESH_TOKEN_AGE, true);
   }
 
   public async isRefreshTokenRevoked(token: string) {
-    return (await this.redis.get(`revoked-token#${token}`)) as boolean;
+    return !!(await this.redis.get(`revoked-token#${token}`));
   }
 }

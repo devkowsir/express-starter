@@ -8,6 +8,7 @@ import hpp from "hpp";
 import morgan from "morgan";
 import database, { type PostGres } from "./databases/postgres";
 import { Route } from "./interfaces";
+import authMiddleware from "./middlewares/auth.middleware";
 import jsonMiddleware from "./middlewares/json.middleware";
 
 class App {
@@ -59,6 +60,7 @@ class App {
     this.app.use(hpp());
     this.app.use(helmet());
     this.app.use(jsonMiddleware);
+    this.app.use(authMiddleware);
   }
 
   private initializeRoutes(routes: Route[]) {

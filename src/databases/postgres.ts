@@ -29,7 +29,6 @@ export class PostGres {
 
   public async connect() {
     await this.db.execute(sql`SELECT NOW();`);
-    await this.db.execute(sql`delete from "user"`);
   }
 
   public async disconnect() {
